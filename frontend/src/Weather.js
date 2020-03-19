@@ -81,7 +81,7 @@ class Weather extends React.Component {
         </dl>
         <dl>
           <dt>summary</dt>
-          <dd className='test-weather'>summary: {this.state.summary}</dd>
+          <dd className='test-weather'>{this.state.summary}</dd>
         </dl>
         <p className='test-weather'>
           <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
