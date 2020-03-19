@@ -22,7 +22,7 @@ class Weather extends React.Component {
   callWeatherApi = (props) => {
     if (props.lat && props.lng) {
       this.setState({location: {lat: this.props.lat, lng: this.props.lng}});
-      fetch(`http://localhost:9000/weatherFetch?lat=${props.lat}&lng=${props.lng}`)
+      fetch(`/api/weatherFetch?lat=${props.lat}&lng=${props.lng}`)
         .then(res => res.json())
         .then(data => {
           if (this._isMounted) {
