@@ -16,6 +16,7 @@ class Weather extends React.Component {
       cloudCover: '',
       windSpeed: '',
       windGust: '',
+      summary: '',
     }
   };
 
@@ -26,7 +27,7 @@ class Weather extends React.Component {
         .then(res => res.json())
         .then(data => {
           if (this._isMounted) {
-            const {temperature, apparentTemperature, humidity, pressure, cloudCover, windSpeed, windGust} = data.currently;
+            const {temperature, apparentTemperature, humidity, pressure, cloudCover, windSpeed, windGust, summary} = data.currently;
             this.setState({
               temperature: temperature,
               apparentTemperature: apparentTemperature,
@@ -35,6 +36,7 @@ class Weather extends React.Component {
               cloudCover: cloudCover,
               windSpeed: windSpeed,
               windGust: windGust,
+              summary: summary,
             });
           }
         })
@@ -62,15 +64,25 @@ class Weather extends React.Component {
   render() {
     return (
       <div>
-        <p className='test-weather'>latitude: {this.state.location.lat}</p>
-        <p className='test-weather'>longitude: {this.state.location.lng}</p>
-        <p className='test-weather'>temperature: {this.state.temperature}&deg;C</p>
-        <p className='test-weather'>apparent temperature: {this.state.apparentTemperature}&deg;C</p>
-        <p className='test-weather'>pressure: {this.state.pressure} hPa</p>
-        <p className='test-weather'>humidity: {Math.round(this.state.humidity * 100)}%</p>
-        <p className='test-weather'>cloud cover: {Math.round(this.state.cloudCover * 100)}%</p>
-        <p className='test-weather'>wind speed: {this.state.windSpeed} m/s</p>
-        <p className='test-weather'>wind gust: {this.state.windGust} m/s</p>
+        <dl>
+          <dt>geo data</dt>
+          <dd className='test-weather'>latitude: {this.state.location.lat}</dd>
+          <dd className='test-weather'>longitude: {this.state.location.lng}</dd>
+        </dl>
+        <dl>
+          <dt>weather</dt>
+          <dd className='test-weather'>temperature: {this.state.temperature}&deg;C</dd>
+          <dd className='test-weather'>apparent temperature: {this.state.apparentTemperature}&deg;C</dd>
+          <dd className='test-weather'>pressure: {this.state.pressure} hPa</dd>
+          <dd className='test-weather'>humidity: {Math.round(this.state.humidity * 100)}%</dd>
+          <dd className='test-weather'>cloud cover: {Math.round(this.state.cloudCover * 100)}%</dd>
+          <dd className='test-weather'>wind speed: {this.state.windSpeed} m/s</dd>
+          <dd className='test-weather'>wind gust: {this.state.windGust} m/s</dd>
+        </dl>
+        <dl>
+          <dt>summary</dt>
+          <dd className='test-weather'>summary: {this.state.summary}</dd>
+        </dl>
         <p className='test-weather'>
           <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
         </p>

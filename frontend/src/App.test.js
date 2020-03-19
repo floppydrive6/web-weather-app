@@ -9,5 +9,5 @@ jest.mock('leaflet');
 
 it('renders circle message', () => {
   const {getByText} = render(<App/>);
-  expect(getByText('Circle radius in kilometers:')).toBeInTheDocument();
+  expect(getByText('circle radius in kilometers:')).toBeInTheDocument();
 });

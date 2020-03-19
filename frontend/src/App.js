@@ -72,7 +72,7 @@ export default class App extends React.Component {
             <AirLayer layer={this.state.mapLayer}/>
           </Map>
         </div>
-        <div className='navRight'>Circle radius in kilometers:
+        <div className='navRight'>circle radius in kilometers:
           <InputField informParent={this.handleRadiusChange}/>
           <LayerSwitch informParent={this.handleLayerChange}/>
           <Weather
