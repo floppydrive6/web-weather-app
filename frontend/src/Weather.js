@@ -1,5 +1,11 @@
 import React from 'react';
+import ReactAnimatedWeather from 'react-animated-weather';
 import _ from 'lodash';
+
+const DEFAULT_ICON = {
+  icon: 'CLEAR_DAY',
+  size: 32,
+};
 
 class Weather extends React.Component {
   constructor(props) {
@@ -17,6 +23,7 @@ class Weather extends React.Component {
       windSpeed: '',
       windGust: '',
       summary: '',
+      icon: DEFAULT_ICON.icon
     }
   };
 
@@ -27,7 +34,7 @@ class Weather extends React.Component {
         .then(res => res.json())
         .then(data => {
           if (this._isMounted) {
-            const {temperature, apparentTemperature, humidity, pressure, cloudCover, windSpeed, windGust, summary} = data.currently;
+            const {temperature, apparentTemperature, humidity, pressure, cloudCover, windSpeed, windGust, summary, icon} = data.currently;
             this.setState({
               temperature: temperature,
               apparentTemperature: apparentTemperature,
@@ -37,6 +44,7 @@ class Weather extends React.Component {
               windSpeed: windSpeed,
               windGust: windGust,
               summary: summary,
+              icon: icon.toString().toUpperCase().replace(/-/g, '_')
             });
           }
         })
@@ -82,6 +90,10 @@ class Weather extends React.Component {
         <dl>
           <dt>summary</dt>
           <dd className='test-weather'>{this.state.summary}</dd>
+          <ReactAnimatedWeather
+            icon={this.state.icon}
+            size={DEFAULT_ICON.size}
+          />
         </dl>
         <p className='test-weather'>
           <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
