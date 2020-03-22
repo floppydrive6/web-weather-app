@@ -3,7 +3,7 @@ const router = express.Router();
 const fetch = require('node-fetch');
 const DARK_SKY_KEY = 'e4f08a5d564c760d24b255906aff70a1';
 
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
   const lat = req.query.lat || 0;
   const lng = req.query.lng || 0;
   console.log(`fetching weather for: ${lat}, ${lng}`);
