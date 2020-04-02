@@ -1,0 +1,20 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "codeceptjs": "^2.6.0",
+    "puppeteer": "^2.1.1"
+  },
+  "dependencies": {
+    "@codeceptjs/configure": "^0.5.0",
+    "rc": "^1.2.8"
+  }
+}
