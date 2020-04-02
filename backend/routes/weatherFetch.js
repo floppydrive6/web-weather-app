@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
-const DARK_SKY_KEY = 'e4f08a5d564c760d24b255906aff70a1';
+const rc = require('rc')('darkskykey', {});
+const DARK_SKY_KEY = rc.darkSkyKey;
 
 router.get('/', (req, res, next) => {
   const lat = req.query.lat || 0;
