@@ -3,7 +3,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import _ from 'lodash';
 
 const DEFAULT_ICON = {
-  icon: 'N/A',
+  icon: 'CLEAR_DAY',
   size: 32,
 };
 
@@ -48,7 +48,7 @@ class Weather extends React.Component {
             });
           }
         })
-        .catch(err => console.log(err));
+        .catch(err => console.error(err.message));
     }
   };
 
