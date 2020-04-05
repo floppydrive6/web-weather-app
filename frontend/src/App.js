@@ -7,6 +7,7 @@ import AirLayer from './AirLayer';
 import InputField from './InputField';
 import LayerSwitch from './LayerSwitch';
 import Weather from './Weather';
+import LocateControl from './LocateControl'
 
 // defaults
 const DEFAULT_KRK_LATITUDE = 50.0647;
@@ -70,6 +71,7 @@ export default class App extends React.Component {
               fillColor='#007bff'
               radius={this.state.circleRadius}/>
             <AirLayer layer={this.state.mapLayer}/>
+            <LocateControl flyTo/>
           </Map>
         </div>
         <div className='navRight'>circle radius in kilometers:

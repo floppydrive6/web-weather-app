@@ -5,7 +5,7 @@ import React from 'react';
 import {render} from '@testing-library/react';
 import App from './App';
 
-jest.mock('leaflet');
+jest.mock('react-leaflet');
 
 it('renders circle message', () => {
   const {getByText} = render(<App/>);
