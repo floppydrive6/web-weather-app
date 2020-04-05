@@ -1,12 +1,13 @@
 Feature('Test loading app @apprender');
-const rc = require('rc')('e2e', {});
 const {I, openPage} = inject();
+const rc = require('rc')('e2e', {});
 
 Before(async () => {
   await openPage.openPageAndWaitTillLoaded(rc.host, 'circle radius in kilometers:');
 });
 
 Scenario('Test app rendering', async () => {
+  await I.seeInTitle('AirCheck');
   await I.seeElement({css: 'div.navRight'})
 });
 

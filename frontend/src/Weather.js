@@ -3,7 +3,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import _ from 'lodash';
 
 const DEFAULT_ICON = {
-  icon: 'CLEAR_DAY',
+  icon: 'N/A',
   size: 32,
 };
 
@@ -12,17 +12,17 @@ class Weather extends React.Component {
     super(props);
     this.state = {
       location: {
-        lat: '',
-        lng: ''
+        lat: 'N/A',
+        lng: 'N/A'
       },
-      temperature: '',
-      apparentTemperature: '',
-      humidity: '',
-      pressure: '',
-      cloudCover: '',
-      windSpeed: '',
-      windGust: '',
-      summary: '',
+      temperature: 'N/A',
+      apparentTemperature: 'N/A',
+      humidity: 'N/A',
+      pressure: 'N/A',
+      cloudCover: 'N/A',
+      windSpeed: 'N/A',
+      windGust: 'N/A',
+      summary: 'N/A',
       icon: DEFAULT_ICON.icon
     }
   };
