@@ -7,7 +7,7 @@ class GeoSearch extends MapControl {
     super(props);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
-    this.state = {selected: false, lat: null, lng: null};
+    this.state = {selected: false, lat: 0, lng: 0};
   }
 
   createLeafletElement(opts) {

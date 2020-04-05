@@ -9,19 +9,30 @@ class InputField extends React.Component {
   }
 
   decrease = () => {
-    const decreased = this.state.value - 1;
+    if (this.state.value === '') {
+      return;
+    }
+    const decreased = parseInt(this.state.value) - 1;
     if (decreased < 1) return;
     this.setState({value: decreased});
     this.props.informParent(decreased);
   };
 
   increase = () => {
-    const increased = this.state.value + 1;
-    this.setState({value: increased});
-    this.props.informParent(increased);
+    if (this.state.value === '') {
+      this.setState({value: 1})
+    } else {
+      const increased = parseInt(this.state.value) + 1;
+      this.setState({value: increased});
+      this.props.informParent(increased);
+    }
   };
 
   changeValue(e) {
+    if (e.target.value === '') {
+      this.setState({value: ''});
+      this.props.informParent(1);
+    }
     const newValue = parseInt(e.target.value);
     if (!newValue || newValue < 1) return;
     this.setState({value: newValue});
@@ -37,7 +48,6 @@ class InputField extends React.Component {
             aria-label='Radius in KM'
             aria-describedby='basic-addon2'
             type='number'
-            min='1'
             onChange={this.changeValue}
             value={this.state.value}
           />
