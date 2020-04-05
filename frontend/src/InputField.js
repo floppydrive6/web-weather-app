@@ -10,7 +10,7 @@ class InputField extends React.Component {
 
   decrease = () => {
     const decreased = this.state.value - 1;
-    if (decreased < 0) return;
+    if (decreased < 1) return;
     this.setState({value: decreased});
     this.props.informParent(decreased);
   };
