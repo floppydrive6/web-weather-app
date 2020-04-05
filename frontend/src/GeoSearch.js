@@ -6,6 +6,7 @@ class GeoSearch extends MapControl {
   constructor(props) {
     super(props);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleDrag = this.handleDrag.bind(this);
     this.state = {selected: false, lat: null, lng: null};
   }
 
@@ -17,7 +18,7 @@ class GeoSearch extends MapControl {
       showPopup: false,
       marker: {
         icon: new L.Icon.Default(),
-        draggable: false,
+        draggable: true,
       },
       popupFormat: ({query, result}) => result.label,
       maxMarkers: 1,
@@ -35,11 +36,18 @@ class GeoSearch extends MapControl {
   componentDidMount() {
     const {map} = this.props.leaflet;
     map.on('geosearch/showlocation', this.handleSelect);
+    map.on('geosearch/marker/dragend', this.handleDrag);
     map.addControl(this.leafletElement);
   }
 
   handleSelect(e) {
     this.setState({selected: true, lng: e.location.x, lat: e.location.y});
+    this.props.informParent(this.state);
+  }
+
+  handleDrag(e) {
+    const marker = e.location;
+    this.setState({selected: true, lng: marker.lng, lat: marker.lat});
     this.props.informParent(this.state);
   }
 }

@@ -6348,6 +6348,11 @@ leaflet-geosearch@^2.7.0:
     lodash.debounce "^4.0.8"
     nodent-runtime "^3.0.4"
 
+leaflet.locatecontrol@^0.71.1:
+  version "0.71.1"
+  resolved "https://registry.yarnpkg.com/leaflet.locatecontrol/-/leaflet.locatecontrol-0.71.1.tgz#3dd8f4222751b820eb142818bdba7b458bf9fd29"
+  integrity sha512-YTZ+75NfdIwq/yFUmi5tNBeXxy4kEbDry84ArFJGdSzvBNddk2cLUa498xZDE41KC00jY23NIbWyYowp0MZOPQ==
+
 leaflet@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.6.0.tgz#aecbb044b949ec29469eeb31c77a88e2f448f308"
