@@ -5,7 +5,6 @@ import 'leaflet.locatecontrol';
 class LocateControl extends MapControl {
   createLeafletElement(props) {
     const {
-      leaflet: {map},
       ...options
     } = props;
 
@@ -20,7 +19,7 @@ class LocateControl extends MapControl {
       locateOptions: {
         enableHighAccuracy: true
       },
-    }).addTo(map);
+    });
     return lc;
   }
 
