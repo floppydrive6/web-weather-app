@@ -23,7 +23,7 @@ class InputField extends React.Component {
 
   changeValue(e) {
     const newValue = parseInt(e.target.value);
-    if (!newValue || newValue < 0) return;
+    if (!newValue || newValue < 1) return;
     this.setState({value: newValue});
     this.props.informParent(newValue);
   }
