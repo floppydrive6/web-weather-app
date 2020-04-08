@@ -27,7 +27,7 @@ Scenario('Test WAQI link', async () => {
   await I.seeCurrentUrlEquals('http://waqi.info/');
 });
 
-Scenario('Test WAQI link', async () => {
+Scenario('Test Dark Sky link', async () => {
   const leafletLink = locate('a').withText('Powered by Dark Sky');
   await I.waitForElement(leafletLink, 10);
   await I.click(leafletLink);
