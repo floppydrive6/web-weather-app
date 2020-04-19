@@ -5,14 +5,6 @@ const fs = require('fs');
 const looksSame = require('looks-same');
 const rc = require('rc')('e2e', {});
 
-const locateByName = async name => {
-  const searchBox = locate('input').withAttr({placeholder: 'Enter address'});
-  await I.fillField(searchBox, name);
-  await I.waitForElement('.results.active', 10);
-  await I.click(locate('div').inside(locate('.results.active')).first());
-};
-
-
 Before(async () => {
   await openPage.openPageAndWaitTillLoaded(rc.host, 'circle radius in kilometers:');
 });
@@ -20,7 +12,7 @@ Before(async () => {
 Scenario('Test circle radius button', async () => {
   const WAIT_INTERVAL = 2;
   // locate Warsaw
-  await locateByName('Warsaw');
+  await I.searchLocation('Warsaw');
   await I.waitForText('52.2319581', 10, '.test-weather');
   await I.see('21.0067249', '.test-weather');
   await I.seeElementInDOM('.leaflet-marker-icon');
@@ -68,7 +60,7 @@ Scenario('Test circle radius button', async () => {
 
 Scenario('Test circle radius button', async () => {
   // locate Warsaw
-  await locateByName('Warsaw');
+  await I.searchLocation('Warsaw');
   await I.waitForText('52.2319581', 10, '.test-weather');
   await I.see('21.0067249', '.test-weather');
   await I.seeElementInDOM('.leaflet-marker-icon');

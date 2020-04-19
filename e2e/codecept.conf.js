@@ -16,7 +16,11 @@ exports.config = {
       "chrome": {
         "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", '--window-size=1200,900']
       },
-    }
+    },
+    CustomHelper: {
+      require: './helpers/customhelper_helper.js',
+    },
+
   },
   include: {
     I: './steps_file.js',
