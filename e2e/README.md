@@ -17,10 +17,10 @@ Run selected test: `./node_modules/.bin/codeceptjs run --steps --grep '@test_tag
 #### Running tests using npm scripts:
 
 - run all tests:
-`npm run test`
+`npm run tests`
 
 - run selected test only:
-`npm run test -- --grep '@test_tag'`
+`npm run tests -- --grep '@test_tag'`
 
 ### Running tests using docker
 
