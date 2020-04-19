@@ -41,7 +41,7 @@ class LocateControl extends MapControl {
       this.setState({located: true, lng: e.latlng.lng, lat: e.latlng.lat});
       this.props.informParent(this.state);
     } else {
-      console.error('Error when parsing location data');
+      console.error(`Error when parsing location data: ${e}`);
     }
   }
 }
