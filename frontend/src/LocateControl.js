@@ -6,7 +6,7 @@ class LocateControl extends MapControl {
   constructor(props) {
     super(props);
     this.handleLocateFound = this.handleLocateFound.bind(this);
-    this.state = {located: false, lat: 0, lng: 0};
+    this.state = {selected: false, lat: 0, lng: 0};
   }
 
   createLeafletElement(props) {
@@ -26,8 +26,6 @@ class LocateControl extends MapControl {
       locateOptions: {
         enableHighAccuracy: true
       },
-      setView: true,
-      watch: true,
     }).addTo(map);
     return lc;
   }
@@ -39,11 +37,7 @@ class LocateControl extends MapControl {
   }
 
   handleLocateFound(e) {
-    if (e && e.accuracy && e.latlng) {
-      const radius = e.accuracy;
-      const {map} = this.props.leaflet;
-      console.log(map);
-      L.circle(e.latlng, radius).addTo(map).bindPopup(`You are within ${radius} meters from this point`);
+    if (e && e.latlng) {
       this.setState({located: true, lng: e.latlng.lng, lat: e.latlng.lat});
       this.props.informParent(this.state);
     } else {
