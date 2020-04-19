@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Web Weather App Frontend
+
 ## Available Scripts
 
 In the project directory, you can run:
