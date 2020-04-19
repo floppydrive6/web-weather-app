@@ -71,7 +71,7 @@ export default class App extends React.Component {
               fillColor='#007bff'
               radius={this.state.circleRadius}/>
             <AirLayer layer={this.state.mapLayer}/>
-            <LocateControl flyTo/>
+            <LocateControl flyTo informParent={this.changedChildState}/>
           </Map>
         </div>
         <div className='navRight'>circle radius in kilometers:
