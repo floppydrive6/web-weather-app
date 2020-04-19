@@ -2,8 +2,6 @@ const {Helper} = codeceptjs;
 const recorder = require('codeceptjs').recorder;
 
 class CustomHelper extends Helper {
-
-
   async flushRetries() {
     await new Promise(r => setTimeout(r, 100));
     while (recorder.retries.length) recorder.retries.pop();
@@ -15,7 +13,6 @@ class CustomHelper extends Helper {
     await this.helpers['Puppeteer'].waitForElement('.results.active', 10);
     await this.helpers['Puppeteer'].click(locate('div').inside(locate('.results.active')).first());
   }
-
 }
 
 module.exports = CustomHelper;
