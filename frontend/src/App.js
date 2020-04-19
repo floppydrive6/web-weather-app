@@ -12,7 +12,7 @@ import LocateControl from './LocateControl'
 // defaults
 const DEFAULT_KRK_LATITUDE = 50.0647;
 const DEFAULT_KRK_LONGITUDE = 19.9450;
-const DEFAULT_ZOOM = 13;
+const DEFAULT_ZOOM = 12;
 const DEFAULT_RADIUS = 10e3;
 const DEFAULT_LAYER = 'aqi';
 
@@ -29,7 +29,7 @@ export default class App extends React.Component {
   }
 
   changedChildState = childData => {
-    if (!!childData) {
+    if (childData) {
       this.setState({
         resultState: {
           selected: childData.selected,
@@ -41,13 +41,13 @@ export default class App extends React.Component {
   };
 
   handleRadiusChange = radiusData => {
-    if (!!radiusData) {
+    if (radiusData) {
       this.setState({circleRadius: radiusData * 1e3})
     }
   };
 
   handleLayerChange = layerData => {
-    if (!!layerData) {
+    if (layerData) {
       this.setState({mapLayer: layerData})
     }
   };
