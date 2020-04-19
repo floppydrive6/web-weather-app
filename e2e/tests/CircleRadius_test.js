@@ -48,13 +48,13 @@ Scenario('Test circle radius button', async () => {
   if (valueAfterIncrease === valueAfterDecrease) assert.fail('Circle value not changed after decrease');
 
   // compare visual results
-  const looksSameAsyncLocation = new Promise((resolve, reject) => {
+  const looksSameAsyncLocation = () => new Promise((resolve, reject) => {
     looksSame(`${rc.outputdir}/${circleBefore}`, `${rc.outputdir}/${circleAfter}`, (error, {equal}) => {
       if (equal) reject(new Error('Map still looks the same after changing radius size'));
       resolve('Passed')
     });
   });
-  await looksSameAsyncLocation;
+  await looksSameAsyncLocation();
 
 });
 

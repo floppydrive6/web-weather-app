@@ -39,12 +39,12 @@ Scenario('Test map zoom', async () => {
   await I.saveScreenshot(zoomAfter);
 
   // compare results
-  const looksSameAsyncLocation = new Promise((resolve, reject) => {
+  const looksSameAsyncLocation = () => new Promise((resolve, reject) => {
     looksSame(`${rc.outputdir}/${zoomBefore}`, `${rc.outputdir}/${zoomAfter}`, (error, {equal}) => {
       if (equal) reject(new Error('Map still looks the same after zoom'));
       resolve('Passed')
     });
   });
-  await looksSameAsyncLocation;
+  await looksSameAsyncLocation();
 
 });

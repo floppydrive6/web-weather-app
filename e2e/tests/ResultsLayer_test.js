@@ -33,12 +33,12 @@ Scenario('Test switching layer', async () => {
   await I.saveScreenshot(pm10Image);
 
   // compare results
-  const looksSameAsyncLocation = new Promise((resolve, reject) => {
+  const looksSameAsyncLocation = () => new Promise((resolve, reject) => {
     looksSame(`${rc.outputdir}/${pm25Image}`, `${rc.outputdir}/${pm10Image}`, (error, {equal}) => {
-      if (equal) reject(new Error('Map still looks the same after switching layer'));
+      if (!equal) reject(new Error('Map still looks the same after switching layer'));
       resolve('Passed')
     });
   });
-  await looksSameAsyncLocation;
+  await looksSameAsyncLocation();
 
 });
