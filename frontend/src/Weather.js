@@ -60,7 +60,7 @@ class Weather extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps !== this.props) {
       if (!_.isEqual(prevState.location, this.props)) {
-        this.callWeatherApi(this.props)
+        this.callWeatherApi(this.props);
       }
     }
   }
