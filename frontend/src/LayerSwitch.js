@@ -1,7 +1,7 @@
 import React from 'react';
 import {ButtonGroup, ToggleButton} from 'react-bootstrap';
 
-import debounce from 'lodash.debounce';
+import {debounce} from 'lodash';
 
 class LayerSwitch extends React.Component {
   constructor(props) {
