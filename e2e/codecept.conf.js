@@ -14,7 +14,7 @@ exports.config = {
       show: false,
       windowSize: '1200x900',
       "chrome": {
-        "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", '--window-size=1200,900']
+        "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
       },
     },
     CustomHelper: {
