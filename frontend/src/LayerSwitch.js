@@ -25,10 +25,10 @@ class LayerSwitch extends React.Component {
       },
       {
         layer: 'pm25',
-        text: 'PM 2.5',
+        text: ['PM', <sub key={'underpm25'}>2.5</sub>],
       }, {
         layer: 'pm10',
-        text: 'PM 10',
+        text: ['PM', <sub key={'underpm10'}>10</sub>],
       }
     ];
 
