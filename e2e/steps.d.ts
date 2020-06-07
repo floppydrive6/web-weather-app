@@ -1,6 +1,6 @@
 /// <reference types='codeceptjs' />
 type steps_file = typeof import('./steps_file.js');
-type openPage = typeof import('./fragments/OpenPage.js');
+type openPage = typeof import('./steps/OpenPage.js');
 type CustomHelper = import('./helpers/customhelper_helper.js');
 
 declare namespace CodeceptJS {

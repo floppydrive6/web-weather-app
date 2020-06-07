@@ -24,7 +24,7 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    openPage: './fragments/OpenPage.js',
+    openPage: './steps/OpenPage.js',
   },
   bootstrap: null,
   mocha: {},
