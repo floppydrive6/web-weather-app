@@ -17,7 +17,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-leaflet": "^2.6.3",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "PORT=3030 react-scripts start",
